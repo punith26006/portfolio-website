@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initScrollReveal();
-  initSkillBars();
   initTypingEffect();
 });
 
@@ -54,17 +53,7 @@ function initScrollReveal() {
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 }
 
-function initSkillBars() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.width = entry.target.dataset.width + '%';
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-  document.querySelectorAll('.bar-fill').forEach(bar => observer.observe(bar));
-}
+
 
 function initTypingEffect() {
   const el = document.querySelector('.typing-text');

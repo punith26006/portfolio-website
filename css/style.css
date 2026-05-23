@@ -229,18 +229,16 @@ h4 { font-size: 1.1rem; }
 .skill-icon.tools { background: #fee2e2; color: #dc2626; }
 .skill-icon.tools svg { stroke: #dc2626; }
 .skill-card-header h4 { font-weight: 700; font-size: 1rem; }
-.skill-items { display: flex; flex-direction: column; gap: 14px; }
-.skill-row { display: flex; flex-direction: column; gap: 6px; }
-.skill-row-head { display: flex; justify-content: space-between; }
-.skill-row-head span:first-child { font-weight: 500; font-size: 0.875rem; color: var(--heading); }
-.skill-row-head span:last-child { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
-.bar { height: 6px; background: var(--border-light); border-radius: 3px; overflow: hidden; }
-.bar-fill { height: 100%; border-radius: 3px; width: 0; transition: width 1s cubic-bezier(0.4,0,0.2,1); }
-.lang .bar-fill { background: #d97706; }
-.web .bar-fill, .skill-card:nth-child(2) .bar-fill { background: var(--primary); }
-.ai .bar-fill, .skill-card:nth-child(3) .bar-fill { background: #7c3aed; }
-.core .bar-fill, .skill-card:nth-child(4) .bar-fill { background: #059669; }
-.tools .bar-fill, .skill-card:nth-child(5) .bar-fill { background: #dc2626; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tags span {
+  padding: 6px 14px; background: var(--bg-alt); border: 1px solid var(--border);
+  border-radius: 50px; font-size: 0.813rem; font-weight: 600; color: var(--text);
+}
+.skill-card:nth-child(1) .skill-tags span { background: #fffbeb; color: #b45309; border-color: #fde68a; }
+.skill-card:nth-child(2) .skill-tags span { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+.skill-card:nth-child(3) .skill-tags span { background: #f5f3ff; color: #6d28d9; border-color: #ddd6fe; }
+.skill-card:nth-child(4) .skill-tags span { background: #ecfdf5; color: #047857; border-color: #a7f3d0; }
+.skill-card:nth-child(5) .skill-tags span { background: #fef2f2; color: #b91c1c; border-color: #fecaca; }
 
 /* --- Projects --- */
 .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(480px, 1fr)); gap: 28px; }
