@@ -1,81 +1,89 @@
 document.addEventListener('DOMContentLoaded', () => {
-  initNavbar();
-  initScrollReveal();
-  initTypingEffect();
+    // 1. Mobile Menu Toggle
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileBtn.querySelector('i').classList.remove('fa-times');
+                mobileBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+    }
+
+    // 2. Navbar Scroll Effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // 3. Scroll Reveal Animations
+    const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
+    
+    const revealCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                // Optional: Stop observing once revealed
+                // observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const revealOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver(revealCallback, revealOptions);
+    
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    // Trigger reveal immediately for hero elements that are in view on load
+    setTimeout(() => {
+        const heroReveals = document.querySelectorAll('.hero .reveal-left, .hero .reveal-right');
+        heroReveals.forEach(el => el.classList.add('active'));
+    }, 100);
+
+    // 4. Form Submission Handling
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = contactForm.querySelector('button');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = 'Sent Successfully! <i class="fas fa-check"></i>';
+            btn.style.backgroundColor = '#10b981';
+            btn.style.color = '#fff';
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.backgroundColor = '';
+                btn.style.color = '';
+                contactForm.reset();
+            }, 3000);
+        });
+    }
 });
-
-function initNavbar() {
-  const navbar = document.querySelector('.navbar');
-  const toggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  const links = document.querySelectorAll('.nav-links a');
-
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 20);
-    // Highlight active section
-    const sections = document.querySelectorAll('section[id]');
-    let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 120) current = s.id;
-    });
-    links.forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-    });
-  });
-
-  if (toggle && navLinks) {
-    toggle.addEventListener('click', () => {
-      toggle.classList.toggle('active');
-      navLinks.classList.toggle('open');
-    });
-    links.forEach(a => a.addEventListener('click', () => {
-      toggle.classList.remove('active');
-      navLinks.classList.remove('open');
-    }));
-    document.addEventListener('click', e => {
-      if (!navbar.contains(e.target)) {
-        toggle.classList.remove('active');
-        navLinks.classList.remove('open');
-      }
-    });
-  }
-}
-
-function initScrollReveal() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-}
-
-
-
-function initTypingEffect() {
-  const el = document.querySelector('.typing-text');
-  if (!el) return;
-  const titles = ['Java Developer', 'ML & Deep Learning Enthusiast', 'Problem Solver', 'CSE Student @ IIIT Sri City'];
-  let ti = 0, ci = 0, deleting = false, pause = 0;
-  function type() {
-    const now = Date.now();
-    if (now < pause) { requestAnimationFrame(type); return; }
-    const t = titles[ti];
-    if (deleting) { ci--; el.innerHTML = t.substring(0, ci) + '<span class="cursor"></span>'; if (ci === 0) { deleting = false; ti = (ti + 1) % titles.length; pause = now + 300; } }
-    else { ci++; el.innerHTML = t.substring(0, ci) + '<span class="cursor"></span>'; if (ci === t.length) { deleting = true; pause = now + 2000; } }
-    setTimeout(() => requestAnimationFrame(type), deleting ? 35 : 70);
-  }
-  type();
-}
-
-function handleContactForm(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('.btn-submit');
-  const orig = btn.innerHTML;
-  btn.innerHTML = '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Message Sent!';
-  btn.style.background = '#059669';
-  setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; e.target.reset(); }, 3000);
-}
