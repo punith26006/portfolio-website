@@ -229,13 +229,21 @@ button { cursor: pointer; border: none; background: none; font: inherit; color: 
   font-family: var(--heading);
   font-size: clamp(2.8rem, 5.5vw, 4.8rem);
   font-weight: 800; line-height: 1.1; letter-spacing: -0.03em;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   animation: fadeInUp 0.6s var(--ease) 0.1s both;
 }
 
-.typed-cursor {
-  font-weight: 100; color: var(--primary);
-  animation: blink 1s infinite;
+.hero-roles {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.6s var(--ease) 0.15s both;
+}
+.role-tag {
+  font-family: var(--heading); font-size: 1.1rem; font-weight: 600;
+  color: var(--gray);
+}
+.role-sep {
+  color: var(--primary); font-size: 1.2rem;
 }
 
 .hero-description {

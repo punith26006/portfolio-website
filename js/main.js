@@ -46,36 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ===== TYPING EFFECT ===== */
-  const typedEl = document.getElementById('typedText');
-  const words = ['Web Developer.', 'ML Enthusiast.', 'Problem Solver.', 'Open Source Contributor.'];
-  let wordIndex = 0, charIndex = 0, isDeleting = false;
 
-  function typeEffect() {
-    const currentWord = words[wordIndex];
 
-    if (isDeleting) {
-      typedEl.textContent = currentWord.substring(0, charIndex - 1);
-      charIndex--;
-    } else {
-      typedEl.textContent = currentWord.substring(0, charIndex + 1);
-      charIndex++;
-    }
-
-    let delay = isDeleting ? 50 : 100;
-
-    if (!isDeleting && charIndex === currentWord.length) {
-      delay = 2000;
-      isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      wordIndex = (wordIndex + 1) % words.length;
-      delay = 500;
-    }
-
-    setTimeout(typeEffect, delay);
-  }
-  typeEffect();
 
   /* ===== SCROLL REVEAL ===== */
   const revealElements = document.querySelectorAll(
