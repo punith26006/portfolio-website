@@ -108,6 +108,13 @@ h4 { font-size: 1.1rem; }
   background: radial-gradient(circle at top right, #1e1b4b 0%, var(--bg) 100%);
   position: relative; overflow: hidden;
 }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
 .hero::before {
   content: ''; position: absolute; top: -30%; right: -15%;
   width: 600px; height: 600px; border-radius: 50%;
@@ -141,6 +148,39 @@ h4 { font-size: 1.1rem; }
 .hero-stat h3 { font-size: 1.75rem; font-weight: 800; color: var(--primary); margin-bottom: 2px; }
 .hero-stat p { font-size: 0.813rem; color: var(--text-muted); font-weight: 500; }
 @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+/* Hero Image Cutout Styles */
+.hero-image-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  animation: fadeUp 0.6s ease 0.4s both;
+}
+.hero-image-bg {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(80px);
+  opacity: 0.25;
+  z-index: 0;
+}
+.hero-image {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  /* Adds a shadow to make it pop from the background */
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+}
 
 /* --- Buttons --- */
 .btn {
@@ -369,6 +409,8 @@ h4 { font-size: 1.1rem; }
   :root { --nav-height: 60px; }
   h1 { font-size: 2.25rem; } h2 { font-size: 1.6rem; }
   .section { padding: 64px 0; }
+  .hero-grid { grid-template-columns: 1fr; gap: 20px; }
+  .hero-image-wrapper { order: -1; max-width: 300px; margin-bottom: 30px; }
   .hero h1 { font-size: 2.5rem; }
   .hero-stats { gap: 24px; }
   .hero-stat h3 { font-size: 1.4rem; }
