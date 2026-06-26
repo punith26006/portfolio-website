@@ -1,296 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Punith Sai Vujja | Software Engineer</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punith Sai Vujja — Software Engineer</title>
+  <meta name="description" content="Portfolio of Punith Sai Vujja — CSE student at IIIT Sri City, Java developer, ML enthusiast, and open-source contributor.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Background Elements -->
-    <div class="bg-glow top-left"></div>
-    <div class="bg-glow bottom-right"></div>
-    <div class="bg-grid"></div>
+  <!-- ===== CURSOR GLOW ===== -->
+  <div class="cursor-glow" id="cursorGlow"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">Punith<span>.</span></a>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact" class="nav-btn">Contact Me</a>
-            </div>
-            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-flex">
+      <a href="#" class="logo">
+        <span class="logo-bracket">&lt;</span>PS<span class="logo-bracket">/&gt;</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="https://github.com/punith26006" target="_blank" class="nav-social"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/punith-sai-vujja-41a286344/" target="_blank" class="nav-social"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:punithsai.v24@iiits.in" class="btn-hire">Let's Talk</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-elements">
+      <div class="hero-orb orb-1"></div>
+      <div class="hero-orb orb-2"></div>
+      <div class="hero-grid-lines"></div>
+    </div>
+
+    <div class="container hero-layout">
+      <!-- LEFT -->
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>Open to Work</span>
         </div>
-    </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <div class="hero-container">
-                <div class="hero-content reveal-left">
-                    <div class="availability-badge">
-                        <span class="pulse-dot"></span> Available for Opportunities
-                    </div>
-                    
-                    <h1 class="hero-title">
-                        Building the future with <br>
-                        <span class="text-gradient">Code & Intelligence</span>
-                    </h1>
-                    
-                    <h2 class="hero-subtitle">
-                        Hi, I'm <span class="highlight">Punith Sai Vujja</span>, a CSE student at IIIT Sri City specializing in Software Engineering and Machine Learning.
-                    </h2>
-                    
-                    <div class="hero-cta">
-                        <a href="#projects" class="btn btn-primary">
-                            Explore Work <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="https://github.com/punith26006" target="_blank" class="btn btn-secondary">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        <a href="https://www.linkedin.com/in/punith-sai-vujja-41a286344/" target="_blank" class="btn btn-icon">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                    
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <h3 class="stat-value">8.77</h3>
-                            <p class="stat-label">CGPA</p>
-                        </div>
-                        <div class="stat-divider"></div>
-                        <div class="stat-item">
-                            <h3 class="stat-value">2028</h3>
-                            <p class="stat-label">Graduating</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="hero-image-section reveal-right">
-                    <div class="image-wrapper glass-panel">
-                        <!-- Replace punith-cutout.png with your transparent background image -->
-                        <img src="punith-cutout.png" alt="Punith Sai Vujja" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Punith+Sai&size=512&background=0D1117&color=3B82F6'">
-                        <div class="floating-badge badge-1">
-                            <i class="fab fa-java"></i> Java Dev
-                        </div>
-                        <div class="floating-badge badge-2">
-                            <i class="fas fa-brain"></i> ML Enthusiast
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <h1 class="hero-heading">
+          I'm <span class="text-gradient">Punith Sai</span>,<br>
+          a <span class="typed-text" id="typedText"></span><span class="typed-cursor">|</span>
+        </h1>
 
-        <!-- About Section -->
-        <section class="about" id="about">
-            <div class="section-header reveal-up">
-                <span class="section-subtitle">Who I Am</span>
-                <h2 class="section-title">About Me</h2>
-            </div>
-            
-            <div class="about-container">
-                <div class="about-text glass-panel reveal-up">
-                    <p>I am a passionate Computer Science and Engineering student at the <strong>Indian Institute of Information Technology, Sri City</strong>. With a strong foundation in core computer science concepts, I love translating complex problems into elegant, efficient solutions.</p>
-                    <p>My journey spans from developing robust web applications to exploring the fascinating world of deep learning and artificial intelligence. I am driven by curiosity and a relentless desire to learn and innovate.</p>
-                    
-                    <div class="education-timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-date">2024 - 2028</div>
-                            <h4 class="timeline-title">B.Tech in Computer Science and Engineering</h4>
-                            <p class="timeline-org">IIIT Sri City</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <p class="hero-description">
+          Computer Science student at <strong>IIIT Sri City</strong> with a passion for
+          building elegant software, exploring machine learning, and contributing to open-source.
+        </p>
 
-        <!-- Skills Section -->
-        <section class="skills" id="skills">
-            <div class="section-header reveal-up">
-                <span class="section-subtitle">My Arsenal</span>
-                <h2 class="section-title">Technical Expertise</h2>
-            </div>
-            
-            <div class="skills-grid">
-                <!-- Languages -->
-                <div class="skill-category glass-panel reveal-up" style="--delay: 1">
-                    <div class="skill-icon-header text-blue">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Languages</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">C</span>
-                        <span class="tag">JavaScript</span>
-                    </div>
-                </div>
-                
-                <!-- Web Dev -->
-                <div class="skill-category glass-panel reveal-up" style="--delay: 2">
-                    <div class="skill-icon-header text-purple">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Web Development</h3>
-                    <div class="skill-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">React (Learning)</span>
-                        <span class="tag">Responsive Design</span>
-                    </div>
-                </div>
-                
-                <!-- AI/ML -->
-                <div class="skill-category glass-panel reveal-up" style="--delay: 3">
-                    <div class="skill-icon-header text-pink">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3>AI & ML</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">Deep Learning</span>
-                        <span class="tag">Mamba SSM</span>
-                        <span class="tag">PyTorch</span>
-                    </div>
-                </div>
-                
-                <!-- Core CS -->
-                <div class="skill-category glass-panel reveal-up" style="--delay: 4">
-                    <div class="skill-icon-header text-green">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Core CS</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Data Structures</span>
-                        <span class="tag">Algorithms</span>
-                        <span class="tag">OOPs</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            <span>View My Work</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn-glass">
+            <span>Get In Touch</span>
+          </a>
+        </div>
 
-        <!-- Projects Section -->
-        <section class="projects" id="projects">
-            <div class="section-header reveal-up">
-                <span class="section-subtitle">My Work</span>
-                <h2 class="section-title">Featured Projects</h2>
+        <div class="hero-metrics">
+          <div class="metric">
+            <span class="metric-value" data-count="8.77">0</span>
+            <span class="metric-label">CGPA</span>
+          </div>
+          <div class="metric-sep"></div>
+          <div class="metric">
+            <span class="metric-value">GSSoC'26</span>
+            <span class="metric-label">Contributor</span>
+          </div>
+          <div class="metric-sep"></div>
+          <div class="metric">
+            <span class="metric-value">2028</span>
+            <span class="metric-label">Graduating</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT — Photo -->
+      <div class="hero-right">
+        <div class="hero-image-container">
+          <div class="image-glow"></div>
+          <div class="image-frame">
+            <img src="punith-cutout.png" alt="Punith Sai Vujja" class="hero-photo">
+          </div>
+          <!-- Floating Elements -->
+          <div class="float-card card-1">
+            <i class="fab fa-java"></i>
+            <div>
+              <strong>Java Developer</strong>
+              <span>OOP & DSA Expert</span>
             </div>
-            
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card glass-panel reveal-up" style="--delay: 1">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-wallet"></i>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/IIIT-Sricity-FSD-2024-2028/46_NexusPay" target="_blank"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Nexus Pay</h3>
-                        <p>A comprehensive fintech platform for digital payments, transaction coordination, and financial management with secure authentication.</p>
-                    </div>
-                    <div class="project-footer">
-                        <span class="tech-stack">HTML</span>
-                        <span class="tech-stack">CSS</span>
-                        <span class="tech-stack">JavaScript</span>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card glass-panel reveal-up" style="--delay: 2">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-image"></i>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/punith26006" target="_blank"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>SR-Mamba-T <span class="status-badge">Research</span></h3>
-                        <p>A deep learning research project implementing image super-resolution using State Space Models (Mamba) combined with Transformers.</p>
-                    </div>
-                    <div class="project-footer">
-                        <span class="tech-stack">Python</span>
-                        <span class="tech-stack">PyTorch</span>
-                        <span class="tech-stack">Deep Learning</span>
-                    </div>
-                </div>
-                
-                <!-- Open Source Contribution -->
-                <div class="project-card glass-panel reveal-up" style="--delay: 3">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fas fa-code-branch"></i>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Open Source</h3>
-                        <p>Active contributor in the GirlScript Summer of Code (GSSoC '26) AI Agents Track, collaborating on real-world projects.</p>
-                    </div>
-                    <div class="project-footer">
-                        <span class="tech-stack">Git/GitHub</span>
-                        <span class="tech-stack">Open Source</span>
-                    </div>
-                </div>
+          </div>
+          <div class="float-card card-2">
+            <i class="fas fa-brain"></i>
+            <div>
+              <strong>ML Enthusiast</strong>
+              <span>Deep Learning & SSMs</span>
             </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="contact" id="contact">
-            <div class="contact-card glass-panel reveal-up">
-                <div class="contact-content">
-                    <h2>Ready to collaborate?</h2>
-                    <p>I am actively seeking internship opportunities and open to discussing tech, research, or open-source projects.</p>
-                    
-                    <div class="contact-info">
-                        <a href="mailto:punithsai.v24@iiits.in" class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            punithsai.v24@iiits.in
-                        </a>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            IIIT Sri City, AP
-                        </div>
-                    </div>
-                </div>
-                
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Send Message <i class="fas fa-paper-plane"></i></button>
-                </form>
+          </div>
+          <div class="experience-ring">
+            <svg viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="54" class="ring-bg"/>
+              <circle cx="60" cy="60" r="54" class="ring-fill"/>
+            </svg>
+            <div class="ring-text">
+              <span class="ring-number">2+</span>
+              <span class="ring-label">Projects</span>
             </div>
-        </section>
-    </main>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <footer class="footer">
-        <p>&copy; 2026 Punith Sai Vujja. Crafted with passion.</p>
-    </footer>
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="mouse-wheel"></div>
+      </div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
 
-    <script src="js/main.js"></script>
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-tag">
+        <i class="fas fa-user"></i>
+        <span>About Me</span>
+      </div>
+      <h2 class="section-heading">Passionate about building<br><span class="text-gradient">intelligent solutions</span></h2>
+
+      <div class="about-grid">
+        <div class="about-card glass-card">
+          <p class="about-text">
+            I am a driven Computer Science and Engineering student at the
+            <strong>Indian Institute of Information Technology, Sri City</strong>.
+            My journey in tech is fueled by a deep curiosity for how intelligent systems work,
+            from core algorithms to cutting-edge deep learning architectures.
+          </p>
+          <p class="about-text">
+            I love translating complex problems into clean, efficient code.
+            Whether it's developing web applications, training neural networks,
+            or contributing to open-source projects, I bring dedication and a desire
+            to constantly learn and innovate.
+          </p>
+        </div>
+
+        <div class="about-info">
+          <div class="info-card glass-card">
+            <div class="info-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div>
+              <h4>B.Tech CSE</h4>
+              <p>IIIT Sri City • 2024–2028</p>
+            </div>
+          </div>
+          <div class="info-card glass-card">
+            <div class="info-icon"><i class="fas fa-chart-line"></i></div>
+            <div>
+              <h4>8.77 CGPA</h4>
+              <p>Consistent Academic Excellence</p>
+            </div>
+          </div>
+          <div class="info-card glass-card">
+            <div class="info-icon"><i class="fas fa-code-branch"></i></div>
+            <div>
+              <h4>GSSoC '26</h4>
+              <p>AI Agents Track Contributor</p>
+            </div>
+          </div>
+          <div class="info-card glass-card">
+            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4>Andhra Pradesh</h4>
+              <p>IIIT Sri City Campus</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-tag">
+        <i class="fas fa-bolt"></i>
+        <span>Skills & Tech</span>
+      </div>
+      <h2 class="section-heading">Technologies I work with</h2>
+
+      <div class="skills-showcase">
+        <div class="skill-pill"><i class="fab fa-java"></i> Java</div>
+        <div class="skill-pill"><i class="fab fa-python"></i> Python</div>
+        <div class="skill-pill"><i class="fas fa-c"></i> C</div>
+        <div class="skill-pill"><i class="fab fa-js-square"></i> JavaScript</div>
+        <div class="skill-pill"><i class="fab fa-html5"></i> HTML5</div>
+        <div class="skill-pill"><i class="fab fa-css3-alt"></i> CSS3</div>
+        <div class="skill-pill"><i class="fab fa-react"></i> React</div>
+        <div class="skill-pill"><i class="fas fa-fire"></i> PyTorch</div>
+        <div class="skill-pill"><i class="fas fa-brain"></i> Machine Learning</div>
+        <div class="skill-pill"><i class="fas fa-network-wired"></i> Deep Learning</div>
+        <div class="skill-pill"><i class="fas fa-project-diagram"></i> Mamba SSM</div>
+        <div class="skill-pill"><i class="fas fa-database"></i> Data Structures</div>
+        <div class="skill-pill"><i class="fas fa-sitemap"></i> Algorithms</div>
+        <div class="skill-pill"><i class="fab fa-git-alt"></i> Git & GitHub</div>
+        <div class="skill-pill"><i class="fas fa-cubes"></i> OOP</div>
+      </div>
+
+      <div class="skill-cards-grid">
+        <div class="skill-card glass-card">
+          <div class="skill-card-icon blue"><i class="fas fa-code"></i></div>
+          <h3>Languages</h3>
+          <p>Java, Python, C, JavaScript — strong foundation in OOP, DSA, and clean code practices.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--fill: 90%"></div></div>
+        </div>
+        <div class="skill-card glass-card">
+          <div class="skill-card-icon purple"><i class="fas fa-laptop-code"></i></div>
+          <h3>Web Development</h3>
+          <p>HTML5, CSS3, JavaScript, React (learning) — responsive and modern UI/UX development.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--fill: 75%"></div></div>
+        </div>
+        <div class="skill-card glass-card">
+          <div class="skill-card-icon pink"><i class="fas fa-robot"></i></div>
+          <h3>AI & Machine Learning</h3>
+          <p>PyTorch, Deep Learning, Mamba SSMs, Transformers — building intelligent systems.</p>
+          <div class="skill-bar"><div class="skill-fill" style="--fill: 70%"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-tag">
+        <i class="fas fa-folder-open"></i>
+        <span>My Projects</span>
+      </div>
+      <h2 class="section-heading">Featured work &<br><span class="text-gradient">contributions</span></h2>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card glass-card">
+          <div class="project-top">
+            <div class="project-folder"><i class="far fa-folder-open"></i></div>
+            <div class="project-ext-links">
+              <a href="https://github.com/IIIT-Sricity-FSD-2024-2028/46_NexusPay" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3 class="project-title">Nexus Pay</h3>
+          <p class="project-desc">A comprehensive fintech platform for digital payments, transaction coordination, and financial management with secure authentication.</p>
+          <ul class="project-tags">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card glass-card featured">
+          <div class="featured-label">Research</div>
+          <div class="project-top">
+            <div class="project-folder"><i class="far fa-folder-open"></i></div>
+            <div class="project-ext-links">
+              <a href="https://github.com/punith26006" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <h3 class="project-title">SR-Mamba-T</h3>
+          <p class="project-desc">Deep learning research: Image super-resolution using State Space Models (Mamba) combined with Transformers for state-of-the-art results.</p>
+          <ul class="project-tags">
+            <li>Python</li>
+            <li>PyTorch</li>
+            <li>Deep Learning</li>
+          </ul>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card glass-card">
+          <div class="project-top">
+            <div class="project-folder"><i class="far fa-folder-open"></i></div>
+          </div>
+          <h3 class="project-title">Open Source (GSSoC '26)</h3>
+          <p class="project-desc">Active contributor in the GirlScript Summer of Code AI Agents Track, collaborating on real-world projects with industry mentors.</p>
+          <ul class="project-tags">
+            <li>Git/GitHub</li>
+            <li>Open Source</li>
+            <li>Collaboration</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-tag">
+        <i class="fas fa-paper-plane"></i>
+        <span>Get In Touch</span>
+      </div>
+      <h2 class="section-heading">Let's work<br><span class="text-gradient">together</span></h2>
+
+      <div class="contact-grid">
+        <div class="contact-text">
+          <p>I'm actively seeking internship opportunities and always excited to discuss technology, research, or open-source projects. Let's connect!</p>
+          <div class="contact-links">
+            <a href="mailto:punithsai.v24@iiits.in" class="contact-link glass-card">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Email</strong>
+                <span>punithsai.v24@iiits.in</span>
+              </div>
+              <i class="fas fa-arrow-right link-arrow"></i>
+            </a>
+            <a href="https://github.com/punith26006" target="_blank" class="contact-link glass-card">
+              <i class="fab fa-github"></i>
+              <div>
+                <strong>GitHub</strong>
+                <span>punith26006</span>
+              </div>
+              <i class="fas fa-arrow-right link-arrow"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/punith-sai-vujja-41a286344/" target="_blank" class="contact-link glass-card">
+              <i class="fab fa-linkedin-in"></i>
+              <div>
+                <strong>LinkedIn</strong>
+                <span>Punith Sai Vujja</span>
+              </div>
+              <i class="fas fa-arrow-right link-arrow"></i>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form glass-card" id="contactForm">
+          <div class="form-row">
+            <div class="form-field">
+              <label>Name</label>
+              <input type="text" placeholder="John Doe" required>
+            </div>
+            <div class="form-field">
+              <label>Email</label>
+              <input type="email" placeholder="john@example.com" required>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>Subject</label>
+            <input type="text" placeholder="Let's collaborate!">
+          </div>
+          <div class="form-field">
+            <label>Message</label>
+            <textarea rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span>Send Message</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-flex">
+      <p>&copy; 2026 Punith Sai Vujja. Built with passion & code.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/punith26006" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/punith-sai-vujja-41a286344/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:punithsai.v24@iiits.in"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
